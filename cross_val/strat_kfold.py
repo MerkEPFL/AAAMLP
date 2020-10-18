@@ -11,11 +11,14 @@ if __name__ == "__main__":
     # Randomize rows of train
     df = df.sample(frac=1).reset_index(drop=True)
 
-    # Initiate the kfold class from model_selection module with 5 folds
-    kf = model_selection.KFold(n_splits=5)
+    # Fetch targets
+    y = df.target.values
+
+    # Initiate the stratified kfold class from model_selection module with 5 folds
+    kf = model_selection.StratifiedKFold(n_splits=5)
 
     # Fill the new fold column
-    for fold, (trn_, val_) in enumerate(kf.split(X=df)):
+    for fold, (trn_, val_) in enumerate(kf.split(X=df, y=y)):
         df.loc[val_, 'kfold'] = fold
     
     # Save the new csv with kfold column

@@ -135,4 +135,14 @@ dmypy.json
 .pytype/
 
 # Cython debug symbols
+<<<<<<< HEAD
 cython_debug/
+
+#data
+./mnist_classification/input/
+
+#models
+./mnist_classification/models/
+=======
+cython_debug/
+>>>>>>> parent of 8f2ad7b... mnist example for ML project managment

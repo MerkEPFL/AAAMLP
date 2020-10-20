@@ -139,7 +139,7 @@ cython_debug/
 
 #data
 ./mnist_classification/input/
-.categorical_variables/input/
+./categorical_variables/input/
 
 #models
 ./mnist_classification/models/

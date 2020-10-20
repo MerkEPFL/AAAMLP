@@ -36,7 +36,8 @@ def run(fold):
 
     # Get validation data
     x_val = df_val[features].values
-
+    
+    print("Checkpoint1")
     # Initialize model: Logistic regression
     model = xgb.XGBClassifier(
         n_job=3,
@@ -47,6 +48,7 @@ def run(fold):
     # Model fit on training (label encoded)
     model.fit(x_train, df_train.target.values)
 
+    print("Checkpoint2")
     # Predict on validation data
     # We want to use AUC so we need the probabilites
     # We will use the probabilites of 1s
